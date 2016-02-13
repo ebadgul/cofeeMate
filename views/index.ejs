@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="CoffeMate">
+<html ng-app="coffeeMate">
   <head>
     <title><%= title %></title>
-    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+
 
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" />
@@ -13,11 +13,13 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!--<script src="/javascripts/angularApp"-->
-  </head>
-  <body>
 
-  <nav class="navbar navbar-default" role="navigation">
+      <script src="/javascripts/angularApp.js"></script>
+
+  </head>
+  <body ng-controller="mainController">
+
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
           <div class="navbar-header">
               <a class="navbar-brand" href="#/"><i class="fa fa-pied-piper-alt fa-lg" style="color: white;"></i>CoffeeMate</a>
@@ -30,8 +32,8 @@
                   <button type="button" class="btn btn-default navbar-btn btn-danger">Sign out</button>
               </div>
               <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
-              <li><a href="#donate"><i class="fa fa-money"></i> Donate</a></li>
-              <li><a href="#donations"><i class="fa fa-list"></i> View All Donations</a></li>
+              <li><a href="#donate"><i class="fa fa-money"></i> add a Coffee</a></li>
+              <li><a href="#donations"><i class="fa fa-list"></i> View All Coffees</a></li>
               <li><a href="#about"><i class="fa fa-info"></i> About</a></li>
               <li><a href="#contact"><i class="fa fa-comment"></i> Contact </a></li>
           </ul>
@@ -39,9 +41,13 @@
   </nav>
 
 
+        <div class="container" id="main">
+            <h1><%= title %></h1>
+            <div ng-view></div>
+        </div>
 
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
   </body>
+  <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
 </html>
