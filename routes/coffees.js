@@ -28,8 +28,69 @@ router.findAll = function(req, res){
   });
 }
 
+router.findById = function(req, res){
+  var id = req.params.id;
+  console.log('getting donation for id: '+id);
+
+  Coffee.findById(id, function(err, coffee){
+    if (err)
+    res.send(err);
+
+    res.send(coffee);
+  });
+}
 
 
+router.findOne = function(req, res){
+  Coffee.find({"_id": req.params.id}, function(err, coffee){
+    if (err)
+    res.json({message: 'Coffee Not found man!', errmsg : err});
+    else
+    res.json(coffee);
+  });
+}
+
+router.addCoffee = function(req, res){
+  var coffee = new Coffee();
+  coffee.paymenttype = req.body.paymenttype;
+  coffee.amount = req.body.amount;
+  console.log('Adding donation :' +JSON.stringify(coffee));
+
+//  save coffee and check for errors
+  coffee.save(function(err){
+    if (err)
+    res.send(err);
+
+    res.json({ message: 'Coffee Added Boi', data: coffee });
+  });
+}
+
+// delete coffee
+router.deleteCoffee = function(req, res){
+  Coffee.findByIdAndRemove(req.params.id, function(err){
+    if(err)
+    res.send(err);
+    else
+    res.json({message: 'Coffee delete'});
+  });
+}
+
+// increment vote
+router.incrementUpvotes = function(req, res){
+  Coffee.findById(req.params.id, function(err, coffee){
+    if (err)
+    res.send(err);
+    else {
+      coffee.upvotes += 1;
+      coffee.save(function(err){
+        if (err)
+          res.send(err);
+        else
+        res.json({message: 'Coffee upvoted', data: coffee})
+      });
+    }
+  });
+}
 
 /* GET users listing. */
 /*router.get('/', function(req, res, next) {

@@ -1,4 +1,4 @@
-`var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 var CoffeesSchema = new mongoose.Schema({
     paymenttype: String,

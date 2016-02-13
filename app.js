@@ -32,6 +32,15 @@ app.use('/users', users);
 
 // custom routes
 app.get('/coffees', coffees.findAll);
+app.get('/coffees/:id', coffees.findOne);
+app.post('/coffees', coffees.addCoffee);
+app.delete('/coffees/:id', coffees.deleteCoffee);
+app.put('/coffees/:id/votes', coffees.incrementUpvotes);
+
+
+
+//app.get('*', coffees.home);
+
 
 
 // catch 404 and forward to error handler
