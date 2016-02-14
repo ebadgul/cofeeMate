@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var coffees = require('./routes/coffees.js');
-//var coffees = require('./routes/coffees.js');
 
 var app = express();
 
@@ -37,9 +36,7 @@ app.post('/coffees', coffees.addCoffee);
 app.delete('/coffees/:id', coffees.deleteCoffee);
 app.put('/coffees/:id/votes', coffees.incrementUpvotes);
 
-
-
-//app.get('*', coffees.home);
+app.get('*', coffees.home);
 
 
 

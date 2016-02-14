@@ -19,6 +19,11 @@ db.once('open', function () {
 });
 
 
+router.home = function(req, res){
+  res.sendFile('../public/index.ejs');
+}
+
+
 router.findAll = function(req, res){
   Coffee.find(function(err, coffees){
     if (err)

@@ -15,7 +15,13 @@
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
       <script src="/javascripts/angularApp.js"></script>
+      <script src="/javascripts/controllers/maincontroller.js"></script>
+      <script src="/javascripts/controllers/coffeecontroller.js"></script>
+      <script src="/javascripts/controllers/viewcoffeescontroler.js"></script>
+      <script src="/javascripts/controllers/aboutcontroller.js"></script>
+      <script src="/javascripts/controllers/contactcontroller.js"></script>
 
+      <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
   <body ng-controller="mainController">
 
@@ -32,8 +38,8 @@
                   <button type="button" class="btn btn-default navbar-btn btn-danger">Sign out</button>
               </div>
               <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
-              <li><a href="#donate"><i class="fa fa-money"></i> add a Coffee</a></li>
-              <li><a href="#donations"><i class="fa fa-list"></i> View All Coffees</a></li>
+              <li><a href="#addcoffee"><i class="fa fa-money"></i> add a Coffee</a></li>
+              <li><a href="#viewcoffees"><i class="fa fa-list"></i> View All Coffees</a></li>
               <li><a href="#about"><i class="fa fa-info"></i> About</a></li>
               <li><a href="#contact"><i class="fa fa-comment"></i> Contact </a></li>
           </ul>
