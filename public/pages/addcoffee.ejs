@@ -10,12 +10,6 @@
                 <form ng-submit="addCoffee()"
                       style="margin-top:30px;">
 
-                    <div class="form-group" align="center">
-                        <select ng-model="formData.paymentOptions" class="form-control" ng-show="formData.paymentOptions" ng-options="option.name for option in options" ng-style="{'width': 100 + 'px'}">
-                        </select>
-                    </div>
-
-
                     <div class="form-group">
                         <label class="control-label" for="focusedInput">Coffee Name</label>
                         <input ng-model="formData.name" class="form-control" id="focusedInput" type="text" placeholder="Name">

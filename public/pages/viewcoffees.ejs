@@ -8,9 +8,11 @@
             <tbody ng-repeat="coffee in coffees | orderBy:'-upvotes'">
             <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
             ";>
+            
             <td>
-                <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(coffee._id)"></span>
-                {{coffee.upvotes}}
+            <button type="button" class="btn btn-default btn-lg">{{coffee.upvotes}}
+                <span class="glyphicon glyphicon-star" aria-hidden="true" ng-click="incrementUpvotes(coffee._id)"></span>
+            </button>
             </td>
 
             <td>
