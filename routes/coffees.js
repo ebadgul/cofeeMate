@@ -58,6 +58,8 @@ router.findOne = function(req, res){
 router.addCoffee = function(req, res){
   var coffee = new Coffee();
   coffee.paymenttype = req.body.paymenttype;
+  coffee.name = req.body.name;
+  coffee.shop = req.body.shop;
   coffee.amount = req.body.amount;
   console.log('Adding donation :' +JSON.stringify(coffee));
 
