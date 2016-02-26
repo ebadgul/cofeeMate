@@ -3,7 +3,7 @@ var app = angular.module('coffeeMate');
 
 app.controller('viewCoffeesController', ['$scope','$http', function($scope, $http) {
     // create a message to display in our view
-    $scope.message = 'This viewing all coffe page';
+    $scope.message = 'All the Coffees mate!';
 
     findAll();
     function findAll(){

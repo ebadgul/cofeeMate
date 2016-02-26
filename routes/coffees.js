@@ -61,7 +61,7 @@ router.addCoffee = function(req, res){
   coffee.name = req.body.name;
   coffee.shop = req.body.shop;
   coffee.amount = req.body.amount;
-  console.log('Adding donation :' +JSON.stringify(coffee));
+  console.log('Adding Coffee :' +JSON.stringify(coffee));
 
 //  save coffee and check for errors
   coffee.save(function(err){

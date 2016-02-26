@@ -1,6 +1,5 @@
 <div class="jumbotron text-center">
     <h1>List of Coffees</h1>
-    <h3>Enter your coffee details below ...</h3>
     <p>{{ message }}</p>
 
 
@@ -13,8 +12,14 @@
                 <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(coffee._id)"></span>
                 {{coffee.upvotes}}
             </td>
+
             <td>
-                <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>{{coffee.paymenttype}}</span>
+                <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>{{coffee.name}}</span>
+
+            </td>
+            <td>
+                <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>{{coffee.shop}}</span>
+
             </td>
             <td>
                 <span class="glyphicon glyphicon-euro"></span>
