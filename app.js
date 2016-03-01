@@ -36,6 +36,8 @@ app.post('/coffees', coffees.addCoffee);
 app.delete('/coffees/:id', coffees.deleteCoffee);
 app.put('/coffees/:id/votes', coffees.incrementUpvotes);
 
+app.put('/coffees/:id', coffees.update);
+
 app.get('*', coffees.home);
 
 

@@ -22,6 +22,11 @@ app.config(function ($routeProvider) {
             templateUrl: 'pages/contact.ejs',
             controller: 'contactController'
         })
+        // edit/update page
+        .when('/update',{
+            templateUrl: 'pages/update.ejs',
+            controller: 'updateController'
+        })
         // route for the about page
         .when('/about', {
             templateUrl: 'pages/about.ejs',

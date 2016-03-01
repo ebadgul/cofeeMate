@@ -99,6 +99,22 @@ router.incrementUpvotes = function(req, res){
   });
 }
 
+
+//update methodsssssss
+
+router.update = function(req, res){
+  Coffee.findById(req.params.id, function(err, coffee){
+    if (err)
+    res.send(err);
+    else {
+
+    }
+
+  });
+}
+
+
+
 /* GET users listing. */
 /*router.get('/', function(req, res, next) {
   res.send('respond with a resource');

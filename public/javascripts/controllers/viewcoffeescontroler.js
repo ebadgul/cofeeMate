@@ -1,7 +1,7 @@
 var app = angular.module('coffeeMate');
 
 
-app.controller('viewCoffeesController', ['$scope','$http', function($scope, $http) {
+app.controller('viewCoffeesController', ['$scope','$location','$http', function($scope, $location, $http) {
     // create a message to display in our view
     $scope.message = 'All the Coffees mate!';
 
@@ -39,6 +39,17 @@ app.controller('viewCoffeesController', ['$scope','$http', function($scope, $htt
                 console.log('Error: '+data);
             });
         }
+    };
+
+    $scope.update = function (id) {
+        $http.get('/coffees/'+id)
+            .success(function (data) {
+                $location.path('/update');
+                console.log(data);
+            })
+            .error(function (data) {
+                console.log('Error: ' + data);
+            });
     };
 }
 ]);

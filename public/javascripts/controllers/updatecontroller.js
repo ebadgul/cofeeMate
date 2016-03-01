@@ -1,7 +1,7 @@
 var app = angular.module('coffeeMate');
 
-app.controller('coffeeController', ['$scope', '$location', '$http', function ($scope, $location, $http) {
-    $scope.message = 'Enter your Coffee details below...';
+app.controller('updateController', ['$scope', '$location', '$http', function ($scope, $location, $http) {
+    $scope.message = 'Update Exiting Coffee...';
 
     $scope.formData = {};
 
@@ -15,20 +15,16 @@ app.controller('coffeeController', ['$scope', '$location', '$http', function ($s
     $scope.formData.amount = 1.99;
     $scope.formData.upvotes = 0;
 
-    $scope.addCoffee = function () {
-        $scope.formData.paymenttype = $scope.formData.paymentOptions.name;
-        $http.post('/coffees', $scope.formData)
+    $scope.update = function (id) {
+        $http.get('/coffees/'+id)
             .success(function (data) {
-                $scope.coffees = data;
-                $location.path('/viewcoffees');
+
                 console.log(data);
             })
             .error(function (data) {
                 console.log('Error: ' + data);
             });
     };
-
-
 
 }
 
