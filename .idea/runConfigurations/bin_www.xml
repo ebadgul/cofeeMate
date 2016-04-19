@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="bin/www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/bin/node" path-to-js-file="$PROJECT_DIR$/../coffeeMate/bin/www" working-dir="$PROJECT_DIR$/../coffeeMate">
+  <configuration default="false" name="bin/www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/bin/node" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$">
     <envs>
       <env name="DEBUG" value="CoffeMate:*" />
     </envs>
-    <browser url="http://localhost:3000/" />
+    <browser url="http://localhost:8080/" />
     <method />
   </configuration>
 </component>

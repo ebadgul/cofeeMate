@@ -23,7 +23,7 @@ app.config(function ($routeProvider) {
             controller: 'contactController'
         })
         // edit/update page
-        .when('/update',{
+        .when('/coffee/edit/:coffeeId',{
             templateUrl: 'pages/update.ejs',
             controller: 'updateController'
         })

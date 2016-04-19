@@ -1,25 +1,30 @@
 <div class="jumbotron text-center">
     <h1>Update a Coffee</h1>
     <p>{{ message }}</p>
+    <!--<p>{{coffee.name}}</p>-->
 
 
-    <div ng-controller="updateController">
+    <div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
 
-                <form ng-submit="addCoffee()"
-                      style="margin-top:30px;">
+                <form ng-submit="updateCoffee(coffee._id)"
+                      style="margin-top:30px;" ng-controller="updateController">
 
+                    <div class = "form-group" align = "center">Favourtie<div class=rating>
+                     <span id="star-toggle" class="favourite glyphicon glyphicon-star gi-3x"  style="color:blue">
+                               </span>
 
+                    </div>
 
                     <div class="form-group">
                         <label class="control-label" for="focusedInput">Coffee Name</label>
-                        <input ng-model="formData.name" class="form-control" id="focusedInput" type="text" placeholder="Name">
+                        <input ng-model="coffee.name" class="form-control" id="focusedInput" type="text">
                     </div>
 
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Coffee Shop</label>
-                        <input ng-model="formData.shop" class="form-control" id="focusedInput" type="text" placeholder="Shop">
+                        <input ng-model="coffee.shop" class="form-control" id="focusedInput" type="text">
                     </div>
 
 
@@ -28,10 +33,29 @@
                         <input type="number"
                                class="form-control"
                                placeholder="Amount"
-                               ng-model="formData.amount"
+                               ng-model="coffee.amount"
                                ng-style="{'width': 100 + 'px'}"></input>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add Coffee</button>
+
+
+                    <div class = "form-group" align = "center">Star Rating <div class=rating>
+                            <div class="stars">
+                <span id="star-toggle5" class="glyphicon glyphicon-star gi-3x"  style="color:blue">
+                               </span>
+                 <span id="star-toggle4" class="glyphicon glyphicon-star gi-3x"  style="color:blue ">
+                               </span>
+                 <span id="star-toggle3" class="glyphicon glyphicon-star gi-3x"  style="color:blue ">
+                               </span>
+                 <span id="star-toggle4" class="glyphicon glyphicon-star gi-3x"  style="color:blue " >
+                               </span>
+                 <span id="star-toggle5" class="glyphicon glyphicon-star gi-3x"  style="color:blue " >
+                               </span>
+                        </div>
+                    </div>
+                        </div>
+
+
+                    <button type="submit" class="btn btn-primary">Update Coffee</button>
                 </form>
 
             </div>
@@ -39,6 +63,5 @@
 
     </div>
 </div>
-
 
 

@@ -6,7 +6,6 @@ var mongo = require('mongodb');
 var router = express.Router();
 
 
-
 mongoose.connect('mongodb://localhost:27017/coffeematedb');
 
 var db = mongoose.connection;
@@ -99,19 +98,31 @@ router.incrementUpvotes = function(req, res){
   });
 }
 
+//coffee.name = req.body[0].name;
+//coffee.shop = req.body[0].shop;
+//coffee.amount = req.body[0].amount;
+
 
 //update methodsssssss
 
-router.update = function(req, res){
-  Coffee.findById(req.params.id, function(err, coffee){
+
+router.updateCoffee = function(req, res){
+  //Coffee.findById(req.params.id);
+  var id = req.params.findById(coff);
+  var coffee = new Coffee();
+  coffee.name = req.body.name;
+  coffee.shop = req.body.shop;
+  coffee.amount = req.body.amount;
+
+  console.log("name"+coffee.name);
+
+  coffee.update(function(err, coffee){
     if (err)
-    res.send(err);
-    else {
-
-    }
-
+      res.send(err);
+      else
+      res.json({ messsage: 'coffee updated'});
   });
-}
+};
 
 
 
