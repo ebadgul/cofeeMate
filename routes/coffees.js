@@ -105,29 +105,51 @@ router.incrementUpvotes = function(req, res){
 
 //update methodsssssss
 
+/*
+var coffee = new Coffee();
+coffee.paymenttype = req.body.paymenttype;
+coffee.name = req.body.name;
+coffee.shop = req.body.shop;
+coffee.amount = req.body.amount;
+*/
+
 
 router.updateCoffee = function(req, res){
-  //Coffee.findById(req.params.id);
-  var id = req.params.findById(coff);
-  var coffee = new Coffee();
-  coffee.name = req.body.name;
-  coffee.shop = req.body.shop;
-  coffee.amount = req.body.amount;
-
-  console.log("name"+coffee.name);
-
-  coffee.update(function(err, coffee){
+  var query = { "_id": req.params.id };
+  Coffee.update(query,req.body, null, function(err, coffee){
     if (err)
       res.send(err);
-      else
-      res.json({ messsage: 'coffee updated'});
+    else {
+      res.json({message: 'Coffee upvoted', data: coffee})
+    }
   });
-};
+}
+
+//
 
 
+/*router.updateCoffee = function(req, res){
+  var coffee = new Coffee();
+  coffee.name = req.body[0].name;
+  coffee.shop = req.body[0].shop;
+  var id = req.params.id;
 
-/* GET users listing. */
-/*router.get('/', function(req, res, next) {
+  Coffee.update({_id:id}, {$set : {"name": coffee.name, "shop": coffee.shop}}, {upsert: true}, function(err, coffee){
+    if(err)
+      res.send(err)
+    else
+      res.send("coffee updated!!");
+
+
+  });
+};*/
+
+
+//
+
+
+/*/!* GET users listing. *!/
+router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });*/
 

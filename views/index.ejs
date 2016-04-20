@@ -29,11 +29,11 @@
 
       <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="../stylesheets/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="../stylesheets/star-rating.js" type="text/javascript"></script>
 
 
+      <meta name="google-signin-scope" content="profile email">
+      <meta name="google-signin-client_id" content="161875906693-8df2c2648ai53eiqg8odh1jvd2sq93of.apps.googleusercontent.com">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
 
       <!---->
 
@@ -53,7 +53,7 @@
 
           <ul class="nav navbar-nav navbar-right">
               <div class="navbar-right">
-                  <button type="button" class="btn btn-default navbar-btn btn-primary">Sign in</button>
+                  <button type="button" onclick="onSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Sign in</button>
                   <button type="button" class="btn btn-default navbar-btn btn-danger">Sign out</button>
               </div>
               <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>

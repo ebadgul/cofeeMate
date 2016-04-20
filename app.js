@@ -37,6 +37,7 @@ app.delete('/coffees/:id', coffees.deleteCoffee);
 app.put('/coffees/:id/votes', coffees.incrementUpvotes);
 
 app.put('/coffees/:id', coffees.updateCoffee);
+//app.put('/')
 
 app.get('*', coffees.home);
 
