@@ -5,6 +5,9 @@ var CoffeesSchema = new mongoose.Schema({
     amount: Number,
     name: String,
     shop: String,
+    userId: String,
+    username: String,
+    useremail: String,
     upvotes: {type: Number, default: 0}
 });
 module.exports = mongoose.model('Coffee', CoffeesSchema);

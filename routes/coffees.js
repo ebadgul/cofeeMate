@@ -98,22 +98,6 @@ router.incrementUpvotes = function(req, res){
   });
 }
 
-//coffee.name = req.body[0].name;
-//coffee.shop = req.body[0].shop;
-//coffee.amount = req.body[0].amount;
-
-
-//update methodsssssss
-
-/*
-var coffee = new Coffee();
-coffee.paymenttype = req.body.paymenttype;
-coffee.name = req.body.name;
-coffee.shop = req.body.shop;
-coffee.amount = req.body.amount;
-*/
-
-
 router.updateCoffee = function(req, res){
   var query = { "_id": req.params.id };
   Coffee.update(query,req.body, null, function(err, coffee){
@@ -127,22 +111,34 @@ router.updateCoffee = function(req, res){
 
 //
 
+router.signIn = function(req, res){
 
-/*router.updateCoffee = function(req, res){
-  var coffee = new Coffee();
-  coffee.name = req.body[0].name;
-  coffee.shop = req.body[0].shop;
-  var id = req.params.id;
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
 
-  Coffee.update({_id:id}, {$set : {"name": coffee.name, "shop": coffee.shop}}, {upsert: true}, function(err, coffee){
-    if(err)
-      res.send(err)
-    else
-      res.send("coffee updated!!");
+//  save coffee and check for errors
+  coffee.save(function(err){
+    if (err)
+      res.send(err);
 
-
+    res.json({ message: 'Coffee Added Boi', data: coffee });
   });
-};*/
+}
+
+
+/*function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}*/
+
+// auth2 is initialized with gapi.auth2.init() and a user is signed in.
+
 
 
 //

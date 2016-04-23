@@ -38,6 +38,8 @@ app.put('/coffees/:id/votes', coffees.incrementUpvotes);
 
 app.put('/coffees/:id', coffees.updateCoffee);
 //app.put('/')
+//app.post('/coffees', coffees.signIn);
+
 
 app.get('*', coffees.home);
 

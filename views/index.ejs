@@ -14,6 +14,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+
       <script src="/javascripts/angularApp.js"></script>
       <script src="/javascripts/controllers/maincontroller.js"></script>
       <script src="/javascripts/controllers/coffeecontroller.js"></script>
@@ -53,8 +54,8 @@
 
           <ul class="nav navbar-nav navbar-right">
               <div class="navbar-right">
-                  <button type="button" onclick="onSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Sign in</button>
-                  <button type="button" class="btn btn-default navbar-btn btn-danger">Sign out</button>
+                  <button type="button" ng-submit="signIn();" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Sign in</button>
+                  <button type="button" onclick="signOut();" class="btn btn-default navbar-btn btn-danger">Sign out</button>
               </div>
               <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
               <li><a href="#addcoffee"><i class="fa fa-money"></i> add a Coffee</a></li>
@@ -73,5 +74,30 @@
 
 
   </body>
+
+
+
+
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+
+
+
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+    }
+
+
+  function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+          console.log('User signed out.');
+      });
+  }
+</script>
+
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </html>

@@ -16,7 +16,7 @@ app.controller('viewCoffeesController', ['$scope', '$location', '$http', functio
 
     };
 
-    $scope.incrementUpvotes = function (id) {
+/*    $scope.incrementUpvotes = function (id) {
         $http.put('/coffees/' + id + '/votes')
             .success(function (data) {
                 console.log(data);
@@ -24,7 +24,7 @@ app.controller('viewCoffeesController', ['$scope', '$location', '$http', functio
             }).error(function (data) {
             console.log('Error: ' + data);
         });
-    }
+    }*/
 
 
     $scope.delete = function (id) {

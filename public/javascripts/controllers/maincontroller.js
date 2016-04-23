@@ -10,7 +10,7 @@ app.controller('mainController', ['$scope', '$location', '$http', '$route', func
     //$scope.formData = {};
 
 
-
+/*
      $scope.onSignIn = function(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -27,9 +27,15 @@ app.controller('mainController', ['$scope', '$location', '$http', '$route', func
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-    };
+    };*/
 
 
+    //$scope.onSignIn = function(googleUser){
+    //    var profile = googleUser.getBasicProfile();
+    //
+    //    console.log("userNameeee"+$scope.profile.getName());
+    //
+    //}
 
 
 

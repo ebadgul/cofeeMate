@@ -1,4 +1,3 @@
-var User = require('../models/users');
 var express = require('express');
 var router = express.Router();
 
@@ -7,27 +6,5 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 
 
-
-    //if (req.body.)
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;

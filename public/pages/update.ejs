@@ -38,7 +38,29 @@
                     </div>
 
 
-                    <div class = "form-group" align = "center">Star Rating <div class=rating>
+
+                        <div class="form-group">
+
+     <!--
+                            <button type="button" class="btn btn-default btn-lg">{{coffee.upvotes}}
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"
+                          ng-click="incrementUpvotes(coffee._id)"></span>
+                            </button>
+
+                            <button type="button" class="btn btn-default btn-lg">{{coffee.upvotes}}
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"
+                          ng-click="incrementUpvotes(coffee._id)"></span>
+                            </button>
+
+                            <button type="button" class="btn btn-default btn-lg">{{coffee.upvotes}}
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"
+                          ng-click="incrementUpvotes(coffee._id)"></span>
+                            </button>-->
+
+
+                        </div>
+
+                   <!-- <div class = "form-group" align = "center">Star Rating <div class=rating>
                             <div class="stars">
                 <span id="star-toggle5" class="glyphicon glyphicon-star gi-3x"  style="color:blue">
                                </span>
@@ -52,7 +74,36 @@
                                </span>
                         </div>
                     </div>
+                        </div>-->
+
+
+
+
+
+                        		<span class="form-group">User Rating:
+					<div>
+                        <i ng-class="getRating(1)" ng-click="updateRating(1)" ng-mouseenter="starHoverIn(1)"
+                           ng-mouseleave="starHoverOut()"></i>
+                        <i ng-class="getRating(2)" ng-click="updateRating(2)" ng-mouseenter="starHoverIn(2)"
+                           ng-mouseleave="starHoverOut()"></i>
+                        <i ng-class="getRating(3)" ng-click="updateRating(3)" ng-mouseenter="starHoverIn(3)"
+                           ng-mouseleave="starHoverOut()"></i>
+                        <i ng-class="getRating(4)" ng-click="updateRating(4)" ng-mouseenter="starHoverIn(4)"
+                           ng-mouseleave="starHoverOut()"></i>
+                        <i ng-class="getRating(5)" ng-click="updateRating(5)" ng-mouseenter="starHoverIn(5)"
+                           ng-mouseleave="starHoverOut()"></i>
+                    </div>
+				</span>
+
+                        <div class="gorm-group">
+                            <i class='fa fa-star' ng-style="displayRatingRepeat(shop, 1)"></i>
+                            <i class='fa fa-star' ng-style="displayRatingRepeat(shop, 2)"></i>
+                            <i class='fa fa-star' ng-style="displayRatingRepeat(shop, 3)"></i>
+                            <i class='fa fa-star' ng-style="displayRatingRepeat(shop, 4)"></i>
+                            <i class='fa fa-star' ng-style="displayRatingRepeat(shop, 5)"></i>
                         </div>
+
+
 
 
                     <button type="submit" class="btn btn-primary">Update Coffee</button>
